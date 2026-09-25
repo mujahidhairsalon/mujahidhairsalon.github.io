@@ -1,0 +1,4157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+
+  <title>Mujahid Hair Salon | Premium Barber Studio</title>
+
+  <meta
+    name="description"
+    content="Mujahid Hair Salon — premium barbering, precision haircuts, beard styling and gentleman grooming."
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       MUJAHID HAIR SALON
+       PREMIUM BLACK + RED BARBER THEME
+       ========================================================= */
+
+    :root {
+      --black: #070707;
+      --black-2: #0c0c0c;
+      --black-3: #111111;
+
+      --surface: #151515;
+      --surface-2: #1b1b1b;
+
+      --red: #d71920;
+      --red-bright: #ef1d25;
+      --red-dark: #8f0f14;
+      --red-soft: rgba(215, 25, 32, 0.10);
+      --red-border: rgba(215, 25, 32, 0.35);
+
+      --white: #ffffff;
+      --silver: #a1a1aa;
+      --silver-light: #d4d4d8;
+
+      --border: rgba(255,255,255,0.10);
+
+      --green: #22c55e;
+
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+
+      --max-width: 1180px;
+
+      --shadow:
+        0 30px 90px rgba(0,0,0,0.65);
+
+      --ease: 180ms ease;
+    }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(215,25,32,0.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 5% 60%,
+          rgba(215,25,32,0.06),
+          transparent 25%
+        ),
+        var(--black);
+
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+
+      pointer-events: none;
+
+      opacity: 0.025;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          #fff 1px,
+          transparent 1px
+        );
+
+      background-size: 5px 5px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 32px),
+        var(--max-width)
+      );
+
+      margin-inline: auto;
+    }
+
+
+    /* =========================================================
+       BARBER DECORATION
+       ========================================================= */
+
+    .barber-stripe {
+      height: 7px;
+
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          var(--red) 0,
+          var(--red) 12px,
+          #ffffff 12px,
+          #ffffff 24px,
+          #101010 24px,
+          #101010 36px
+        );
+
+      opacity: 0.9;
+    }
+
+    .barber-stripe-thin {
+      height: 3px;
+
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          var(--red) 0,
+          var(--red) 8px,
+          #ffffff 8px,
+          #ffffff 16px,
+          #111 16px,
+          #111 24px
+        );
+    }
+
+    .barber-icon {
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--red-border);
+      border-radius: 50%;
+
+      color: var(--red-bright);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(215,25,32,0.18),
+          rgba(215,25,32,0.03)
+        );
+
+      box-shadow:
+        inset 0 0 20px rgba(215,25,32,0.08),
+        0 0 25px rgba(215,25,32,0.06);
+
+      font-size: 1.35rem;
+    }
+
+
+    /* =========================================================
+       TYPOGRAPHY
+       ========================================================= */
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 15px;
+
+      color: var(--red-bright);
+
+      font-size: 0.68rem;
+      font-weight: 900;
+
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+
+      width: 25px;
+      height: 2px;
+
+      background: var(--red);
+    }
+
+    .accent {
+      color: var(--red-bright);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 15px;
+
+      font-family: "Barlow Condensed", sans-serif;
+
+      font-size: clamp(
+        2.4rem,
+        7vw,
+        4.6rem
+      );
+
+      line-height: 0.95;
+
+      text-transform: uppercase;
+
+      letter-spacing: -0.025em;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+
+      margin: 0;
+
+      color: var(--silver);
+
+      font-size: 0.92rem;
+
+      line-height: 1.75;
+    }
+
+    section {
+      position: relative;
+      padding: 95px 0;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+
+    .btn {
+      min-height: 52px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      padding: 0 23px;
+
+      border-radius: 5px;
+
+      border: 1px solid transparent;
+
+      font-size: 0.78rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+
+      transition:
+        transform var(--ease),
+        background var(--ease),
+        border-color var(--ease),
+        box-shadow var(--ease),
+        color var(--ease);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-red {
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--red-bright),
+          var(--red-dark)
+        );
+
+      box-shadow:
+        0 12px 35px rgba(215,25,32,0.24);
+    }
+
+    .btn-red:hover {
+      background:
+        linear-gradient(
+          135deg,
+          #ff252d,
+          var(--red)
+        );
+
+      box-shadow:
+        0 18px 45px rgba(215,25,32,0.35);
+    }
+
+    .btn-outline {
+      color: var(--red-bright);
+
+      border-color: var(--red-border);
+
+      background:
+        rgba(215,25,32,0.04);
+    }
+
+    .btn-outline:hover {
+      color: #fff;
+
+      border-color: var(--red);
+
+      background:
+        var(--red);
+    }
+
+    .btn-dark {
+      color: var(--silver-light);
+
+      border-color: var(--border);
+
+      background:
+        rgba(255,255,255,0.025);
+    }
+
+    .btn-dark:hover {
+      color: #fff;
+
+      border-color: var(--red-border);
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .site-header {
+      position: fixed;
+
+      inset: 0 0 auto 0;
+
+      z-index: 1000;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+        rgba(5,5,5,0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* =========================================================
+   BRAND LOGO
+   ========================================================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border: 2px solid #e50914;
+  border-radius: 50%;
+
+  background: #090909;
+
+  box-shadow:
+    0 0 0 3px rgba(229, 9, 20, 0.08),
+    0 8px 25px rgba(229, 9, 20, 0.20);
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.brand-text {
+  color: #ffffff;
+
+  font-size: 0.77rem;
+  font-weight: 950;
+
+  letter-spacing: 0.13em;
+
+  white-space: nowrap;
+}
+
+    .brand-text {
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1rem;
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      display: block;
+
+      margin-top: -2px;
+
+      color: var(--red);
+
+      font-size: 0.48rem;
+
+      letter-spacing: 0.30em;
+    }
+
+    .desktop-nav {
+      display: none;
+
+      align-items: center;
+      gap: 28px;
+    }
+
+    .desktop-nav a {
+      position: relative;
+
+      color: var(--silver-light);
+
+      font-size: 0.72rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .desktop-nav a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 100%;
+      bottom: -8px;
+
+      height: 2px;
+
+      background: var(--red);
+
+      transition: right var(--ease);
+    }
+
+    .desktop-nav a:hover {
+      color: #fff;
+    }
+
+    .desktop-nav a:hover::after {
+      right: 0;
+    }
+
+    .desktop-cta {
+      display: none;
+    }
+
+    .mobile-menu-button {
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--red-border);
+      border-radius: 5px;
+
+      color: #fff;
+
+      background:
+        rgba(215,25,32,0.05);
+
+      font-size: 1.2rem;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      padding: 8px 0 18px;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+    .mobile-menu.open {
+      display: grid;
+    }
+
+    .mobile-menu a {
+      padding: 14px 3px;
+
+      color: var(--silver-light);
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--red);
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        145px 0
+        85px;
+
+      overflow: hidden;
+
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      right: -250px;
+      top: 5%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(215,25,32,0.18),
+          transparent 65%
+        );
+
+      filter: blur(30px);
+
+      z-index: -3;
+    }
+
+    .hero-lines {
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -4;
+
+      opacity: 0.12;
+
+      background:
+        linear-gradient(
+          rgba(215,25,32,0.15) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(215,25,32,0.15) 1px,
+          transparent 1px
+        );
+
+      background-size: 65px 65px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 90%
+        );
+    }
+
+    .hero-pole {
+      position: absolute;
+
+      right: 4%;
+      top: 22%;
+
+      width: 95px;
+      height: 390px;
+
+      opacity: 0.11;
+
+      border:
+        9px solid #eee;
+
+      background:
+        repeating-linear-gradient(
+          135deg,
+          var(--red) 0,
+          var(--red) 35px,
+          #fff 35px,
+          #fff 70px,
+          #101010 70px,
+          #101010 105px
+        );
+
+      border-radius: 50px;
+
+      transform: rotate(12deg);
+
+      z-index: -2;
+    }
+
+    .hero-pole::before,
+    .hero-pole::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+
+      width: 130px;
+      height: 42px;
+
+      transform: translateX(-50%);
+
+      background:
+        linear-gradient(
+          #171717,
+          #050505
+        );
+
+      border-radius: 50%;
+    }
+
+    .hero-pole::before {
+      top: -25px;
+    }
+
+    .hero-pole::after {
+      bottom: -25px;
+    }
+
+    .hero-content {
+      max-width: 940px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 20px;
+
+      padding: 7px 12px;
+
+      border:
+        1px solid var(--red-border);
+
+      background:
+        rgba(215,25,32,0.07);
+
+      color: var(--silver-light);
+
+      font-size: 0.64rem;
+      font-weight: 900;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-kicker span {
+      color: var(--red-bright);
+    }
+
+    .hero h1 {
+      margin: 0 0 28px;
+
+      max-width: 950px;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: clamp(
+        4rem,
+        12vw,
+        8.7rem
+      );
+
+      line-height: 0.83;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+    }
+
+    .hero h1 .red-word {
+      display: inline-block;
+
+      color: var(--red-bright);
+
+      text-shadow:
+        0 0 35px rgba(215,25,32,0.18);
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      margin: 0 0 30px;
+
+      color: var(--silver);
+
+      font-size:
+        clamp(
+          0.95rem,
+          2vw,
+          1.12rem
+        );
+
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 11px;
+
+      margin-bottom: 28px;
+    }
+
+    .open-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      color: var(--silver-light);
+
+      font-size: 0.73rem;
+      font-weight: 800;
+    }
+
+    .open-dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 0 5px rgba(34,197,94,0.07),
+        0 0 20px rgba(34,197,94,0.45);
+    }
+
+    .hero-barber-mark {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-top: 35px;
+
+      color: #666;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+    }
+
+    .hero-barber-mark::before {
+      content: "✂";
+
+      color: var(--red);
+
+      font-size: 1.2rem;
+    }
+
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
+
+    #services {
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(255,255,255,0.015),
+          transparent
+        );
+    }
+
+    .price-card {
+      max-width: 940px;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 6px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #171717,
+          #0d0d0d
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .price-card::before {
+      content: "";
+
+      display: block;
+
+      height: 5px;
+
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          var(--red) 0,
+          var(--red) 10px,
+          #fff 10px,
+          #fff 20px,
+          #111 20px,
+          #111 30px
+        );
+    }
+
+    .menu-header {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 20px;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .menu-header-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.1rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+    }
+
+    .menu-header-title span {
+      color: var(--red);
+    }
+
+    .menu-header-badge {
+      color: var(--red);
+
+      font-size: 0.58rem;
+      font-weight: 900;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .price-list {
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    .price-row {
+      min-height: 82px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 18px;
+
+      padding: 18px 20px;
+
+      border-bottom:
+        1px solid var(--border);
+
+      transition:
+        background var(--ease),
+        padding var(--ease);
+    }
+
+    .price-row:hover {
+      padding-left: 25px;
+
+      background:
+        rgba(215,25,32,0.045);
+    }
+
+    .price-row:last-child {
+      border-bottom: 0;
+    }
+
+    .service-info {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      min-width: 0;
+    }
+
+    .service-index {
+      width: 32px;
+      height: 32px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border:
+        1px solid var(--red-border);
+
+      color: var(--red);
+
+      background:
+        var(--red-soft);
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .service-name {
+      color: #fff;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.05rem;
+      font-weight: 700;
+
+      letter-spacing: 0.015em;
+
+      text-transform: uppercase;
+    }
+
+    .service-price {
+      flex-shrink: 0;
+
+      padding: 6px 10px;
+
+      border:
+        1px solid var(--red-border);
+
+      color: #fff;
+
+      background:
+        rgba(215,25,32,0.08);
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .price-footer {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 20px;
+
+      border-top:
+        1px solid var(--border);
+
+      background:
+        rgba(215,25,32,0.025);
+    }
+
+    .price-footer p {
+      margin: 0;
+
+      color: var(--silver);
+
+      font-size: 0.7rem;
+    }
+
+
+    /* =========================================================
+       BOOKING
+       ========================================================= */
+
+    .booking-shell {
+      max-width: 860px;
+
+      margin-inline: auto;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--red-border);
+
+      border-radius: 7px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #181818,
+          #0b0b0b
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .booking-header {
+      position: relative;
+
+      padding: 27px 22px;
+
+      border-bottom:
+        1px solid var(--border);
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(215,25,32,0.08),
+          transparent
+        );
+    }
+
+    .booking-header::after {
+      content: "✂";
+
+      position: absolute;
+
+      right: 25px;
+      top: 25px;
+
+      color: rgba(215,25,32,0.15);
+
+      font-size: 3rem;
+    }
+
+    .booking-header h2 {
+      margin: 0 0 7px;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: clamp(
+        2rem,
+        6vw,
+        3rem
+      );
+
+      line-height: 0.95;
+
+      text-transform: uppercase;
+    }
+
+    .booking-header p {
+      margin: 0;
+
+      color: var(--silver);
+
+      font-size: 0.78rem;
+    }
+
+    .progress {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 5px;
+
+      margin-top: 22px;
+    }
+
+    .progress-bar {
+      height: 4px;
+
+      border-radius: 0;
+
+      background:
+        rgba(255,255,255,0.10);
+
+      transition:
+        background var(--ease);
+    }
+
+    .progress-bar.active {
+      background:
+        var(--red);
+      box-shadow:
+        0 0 12px rgba(215,25,32,0.45);
+    }
+
+    .booking-body {
+      padding: 25px 22px 30px;
+    }
+
+    .wizard-step {
+      display: none;
+    }
+
+    .wizard-step.active {
+      display: block;
+
+      animation:
+        fadeIn 220ms ease both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .step-title {
+      margin-bottom: 20px;
+    }
+
+    .step-title h3 {
+      margin: 0 0 5px;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.5rem;
+
+      text-transform: uppercase;
+    }
+
+    .step-title p {
+      margin: 0;
+
+      color: var(--silver);
+
+      font-size: 0.76rem;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--silver-light);
+
+      font-size: 0.7rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 4px;
+
+      outline: none;
+
+      color: #fff;
+
+      background:
+        #0d0d0d;
+
+      transition:
+        border-color var(--ease),
+        box-shadow var(--ease);
+    }
+
+    .field input,
+    .field select {
+      min-height: 53px;
+
+      padding: 0 15px;
+    }
+
+    .field textarea {
+      min-height: 115px;
+
+      padding: 14px 15px;
+
+      resize: vertical;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #52525b;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color:
+        var(--red);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(215,25,32,0.08);
+    }
+
+    .field select option {
+      color: #fff;
+      background: #0d0d0d;
+    }
+
+    .wizard-actions {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+      margin-top: 22px;
+    }
+
+
+    /* =========================================================
+       DATE / TIME
+       ========================================================= */
+
+    .date-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 8px;
+
+      margin-bottom: 24px;
+    }
+
+    .date-option {
+      min-height: 72px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 4px;
+
+      color: var(--silver-light);
+
+      background:
+        rgba(255,255,255,0.02);
+
+      transition:
+        transform var(--ease),
+        border-color var(--ease),
+        background var(--ease);
+    }
+
+    .date-option:hover {
+      transform: translateY(-1px);
+
+      border-color:
+        var(--red-border);
+    }
+
+    .date-option.selected {
+      color: #fff;
+
+      border-color:
+        var(--red);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--red),
+          var(--red-dark)
+        );
+
+      box-shadow:
+        0 8px 25px rgba(215,25,32,0.22);
+    }
+
+    .date-day {
+      display: block;
+
+      font-size: 0.62rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+    }
+
+    .date-number {
+      display: block;
+
+      margin-top: 2px;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    .time-heading {
+      margin-bottom: 10px;
+
+      color: var(--silver-light);
+
+      font-size: 0.72rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .time-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 8px;
+    }
+
+    .time-option {
+      min-height: 48px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 4px;
+
+      color: var(--silver-light);
+
+      background:
+        rgba(255,255,255,0.02);
+
+      font-size: 0.76rem;
+      font-weight: 800;
+
+      transition:
+        border-color var(--ease),
+        background var(--ease);
+    }
+
+    .time-option:hover {
+      border-color:
+        var(--red-border);
+    }
+
+    .time-option.selected {
+      color: #fff;
+
+      border-color:
+        var(--red);
+
+      background:
+        var(--red);
+    }
+
+    .selection-note {
+      margin: 13px 0 0;
+
+      color: #71717a;
+
+      font-size: 0.68rem;
+    }
+
+
+    /* =========================================================
+       LOYALTY / VIP BARBER CLUB
+       ========================================================= */
+
+    .loyalty-card {
+      position: relative;
+
+      max-width: 920px;
+
+      margin-inline: auto;
+
+      overflow: hidden;
+
+      padding: 32px;
+
+      border:
+        1px solid
+        rgba(215,25,32,0.40);
+
+      border-radius: 7px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #171717,
+          #080808 70%
+        );
+
+      box-shadow:
+        var(--shadow),
+        inset 0 0 80px
+        rgba(215,25,32,0.025);
+    }
+
+    .loyalty-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+
+      right: -130px;
+      top: -190px;
+
+      border:
+        1px dashed
+        rgba(215,25,32,0.35);
+
+      border-radius: 50%;
+    }
+
+    .loyalty-card::after {
+      content: "VIP";
+
+      position: absolute;
+
+      right: 30px;
+      top: 28px;
+
+      color:
+        rgba(215,25,32,0.09);
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 6rem;
+      font-weight: 900;
+
+      transform: rotate(-8deg);
+    }
+
+    .loyalty-content {
+      position: relative;
+
+      z-index: 1;
+    }
+
+    .loyalty-content h2 {
+      max-width: 720px;
+
+      margin: 0 0 12px;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: clamp(
+        2.2rem,
+        7vw,
+        4rem
+      );
+
+      line-height: 0.92;
+
+      text-transform: uppercase;
+    }
+
+    .loyalty-content > p {
+      max-width: 620px;
+
+      margin: 0 0 27px;
+
+      color: var(--silver);
+
+      font-size: 0.85rem;
+    }
+
+    .reward-list {
+      display: grid;
+
+      gap: 9px;
+
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    .reward-item {
+      min-height: 62px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 11px 13px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+      border-left:
+        3px solid var(--red);
+
+      border-radius: 4px;
+
+      background:
+        rgba(255,255,255,0.025);
+    }
+
+    .reward-number {
+      width: 40px;
+      height: 40px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      color: #fff;
+
+      background:
+        var(--red);
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 0.85rem;
+      font-weight: 900;
+    }
+
+    .reward-text {
+      color: var(--silver-light);
+
+      font-size: 0.77rem;
+      font-weight: 700;
+    }
+
+    .reward-text strong {
+      color: #fff;
+    }
+
+
+    /* =========================================================
+       AMBIANCE
+       ========================================================= */
+
+    .ambiance-grid {
+      display: grid;
+
+      gap: 12px;
+    }
+
+    .ambiance-card {
+      position: relative;
+
+      min-height: 255px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 5px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #242424,
+          #0c0c0c
+        );
+    }
+
+.ambiance-card::before {
+  content: "✂";
+
+  position: absolute;
+
+  top: 35px;
+  right: 35px;
+
+  color: rgba(215, 25, 32, 0.13);
+
+  font-size: 6rem;
+
+  transform: rotate(-15deg);
+
+  z-index: 1;
+}
+
+
+/* Background image + dark overlay */
+.ambiance-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.88),
+      rgba(0, 0, 0, 0.30)
+    );
+
+  z-index: 1;
+}
+
+
+/* STREET / EXTERIOR */
+.ambiance-card:first-child {
+  background:
+    url("street.png")
+    center center
+    / cover
+    no-repeat;
+}
+
+
+/* INTERIOR */
+.ambiance-card:nth-child(2) {
+  background:
+    url("interior.png")
+    center center
+    / cover
+    no-repeat;
+}
+
+
+.ambiance-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 22px;
+}
+
+.ambiance-content span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--red);
+
+  font-size: 0.62rem;
+  font-weight: 950;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.ambiance-content h3 {
+  margin: 0;
+
+  font-family:
+    "Barlow Condensed",
+    sans-serif;
+
+  font-size: 1.8rem;
+
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.ambiance-content p {
+  margin: 5px 0 0;
+
+  color: #ddd;
+
+  font-size: 0.68rem;
+}
+
+.map-card {
+  min-height: 250px;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 5px;
+
+  background: #ffffff;
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 250px;
+
+  min-height: 250px;
+
+  border: 0;
+
+  filter:
+    grayscale(1)
+    contrast(1.2)
+    brightness(0.65)
+    sepia(0.1);
+}
+
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-grid {
+      display: grid;
+
+      gap: 13px;
+
+      margin-top: 14px;
+    }
+
+    .info-card {
+      padding: 23px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 5px;
+
+      background:
+        rgba(20,20,20,0.75);
+    }
+
+    .info-card h3 {
+      margin: 0 0 14px;
+
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.4rem;
+
+      text-transform: uppercase;
+    }
+
+    .hours {
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    .hours li {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 9px 0;
+
+      border-bottom:
+        1px solid var(--border);
+
+      color: var(--silver);
+
+      font-size: 0.73rem;
+    }
+
+    .hours li:last-child {
+      border-bottom: 0;
+    }
+
+    .hours strong {
+      color: #fff;
+    }
+
+    .hours .closed {
+      color: var(--red);
+    }
+
+    .contact-link {
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
+      padding: 11px 0;
+
+      color: var(--silver-light);
+
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .contact-link:hover {
+      color: #fff;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      border:
+        1px solid var(--red-border);
+
+      border-radius: 4px;
+
+      color: var(--red);
+
+      background:
+        var(--red-soft);
+
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      position: relative;
+
+      padding: 40px 0 48px;
+
+      border-top:
+        1px solid var(--border);
+
+      background:
+        #050505;
+    }
+
+    footer::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 4px;
+
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          var(--red) 0,
+          var(--red) 10px,
+          #fff 10px,
+          #fff 20px,
+          #111 20px,
+          #111 30px
+        );
+    }
+
+    .footer-inner {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .footer-brand {
+      font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+      font-size: 1.1rem;
+      font-weight: 900;
+
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: #666;
+
+      font-size: 0.68rem;
+    }
+
+
+    /* =========================================================
+       TOAST
+       ========================================================= */
+
+    .toast {
+      position: fixed;
+
+      left: 50%;
+      bottom: 20px;
+
+      z-index: 3000;
+
+      width:
+        min(
+          calc(100% - 32px),
+          430px
+        );
+
+      padding: 14px 16px;
+
+      border:
+        1px solid var(--red-border);
+
+      border-radius: 5px;
+
+      color: #fff;
+
+      background:
+        #111;
+
+      box-shadow: var(--shadow);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transform:
+        translate(-50%, 140px);
+
+      transition:
+        opacity 220ms ease,
+        transform 220ms ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+
+      transform:
+        translate(-50%, 0);
+    }
+
+    .toast.error {
+      border-color:
+        rgba(239,68,68,0.5);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (min-width: 760px) {
+
+      .container {
+        width:
+          min(
+            calc(100% - 56px),
+            var(--max-width)
+          );
+      }
+
+      .mobile-menu-button {
+        display: none;
+      }
+
+      .desktop-nav {
+        display: flex;
+      }
+
+      .desktop-cta {
+        display: inline-flex;
+      }
+
+      .mobile-menu {
+        display: none !important;
+      }
+
+      .hero {
+        padding-top: 160px;
+      }
+
+      section {
+        padding: 125px 0;
+      }
+
+      .menu-header,
+      .price-row {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .price-row:hover {
+        padding-left: 33px;
+      }
+
+      .booking-header {
+        padding: 32px;
+      }
+
+      .booking-body {
+        padding: 36px;
+      }
+
+      .date-grid {
+        grid-template-columns:
+          repeat(6, 1fr);
+      }
+
+      .time-grid {
+        grid-template-columns:
+          repeat(4, 1fr);
+      }
+
+      .ambiance-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .ambiance-card:first-child {
+        grid-row: span 2;
+
+        min-height: 520px;
+      }
+
+      .map-card {
+        min-height: 520px;
+      }
+
+      .map-card iframe {
+        min-height: 520px;
+      }
+
+      .contact-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .loyalty-card {
+        padding: 50px;
+      }
+
+      .footer-inner {
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 1024px) {
+
+      .hero h1 {
+        max-width: 1000px;
+      }
+
+      .time-grid {
+        grid-template-columns:
+          repeat(6, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+  </style>
+<style id="mobile-gap-fix">
+@media (max-width: 759px) {
+  section { padding: 46px 0; }
+  .section-heading { margin-bottom: 20px; }
+  .section-heading h2 { margin-bottom: 8px; }
+  .section-heading p { line-height: 1.5; }
+  .hero { padding: 96px 0 42px; }
+  .hero-description { margin-bottom: 17px; }
+  .hero-actions { margin-bottom: 15px; }
+  .hero-barber-mark { margin-top: 17px; }
+  .menu-header { padding: 13px 12px; }
+  .price-row { min-height: 60px; padding: 10px 11px; }
+  .price-footer { padding: 11px 12px; }
+  .booking-header { padding: 17px 14px; }
+  .booking-body { padding: 16px 14px 20px; }
+  .step-title { margin-bottom: 12px; }
+  .field { margin-bottom: 10px; }
+  .wizard-actions { margin-top: 14px; }
+  .date-grid { margin-bottom: 14px; }
+  .selection-note { margin-top: 9px; }
+  .loyalty-card { padding: 19px 15px; }
+  .loyalty-content > p { margin-bottom: 14px; }
+  .reward-list { gap: 6px; }
+  .ambiance-grid { gap: 8px; }
+  .ambiance-card, .ambiance-card:first-child { min-height: 200px; }
+  .ambiance-content { padding: 16px; }
+  .map-card, .map-card iframe { min-height: 220px; height: 220px; }
+  .contact-grid { gap: 8px; margin-top: 9px; }
+  .info-card { padding: 15px; }
+  footer { padding: 25px 0 30px; }
+}
+</style>
+</head>
+
+
+<body>
+
+  <!-- TOP BARBER STRIPE -->
+  <div class="barber-stripe"></div>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <nav class="nav" aria-label="Main navigation">
+
+        <a
+          class="brand"
+          href="#home"
+          aria-label="Mujahid Hair Salon home"
+        >
+
+      <span class="brand-logo">
+        <img
+          src="mhslogo.jpg"
+          alt="Mujahid Hair Salon Logo"
+  >
+      </span>
+
+          <span>
+            <span class="brand-text">
+              MUJAHID HAIR SALON
+            </span>
+
+            <small class="brand-sub">
+              PREMIUM BARBER STUDIO
+            </small>
+          </span>
+
+        </a>
+
+
+        <div class="desktop-nav">
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#loyalty">
+            VIP Club
+          </a>
+
+          <a href="#location">
+            The Salon
+          </a>
+
+          <a href="#booking">
+            Book Slot
+          </a>
+
+        </div>
+
+
+        <a
+          class="btn btn-outline desktop-cta"
+          href="#booking"
+        >
+          ✂ Reserve Your Spot
+        </a>
+
+
+        <button
+          class="mobile-menu-button"
+          id="menuButton"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+      </nav>
+
+
+      <div
+        class="mobile-menu"
+        id="mobileMenu"
+      >
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#loyalty">
+          VIP Barber Club
+        </a>
+
+        <a href="#location">
+          The Salon
+        </a>
+
+        <a href="#booking">
+          Book Slot
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div class="hero-lines"></div>
+
+      <div class="hero-pole"></div>
+
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="hero-kicker">
+            <span>✂</span>
+            EST. PREMIUM BARBERING
+            <span>✂</span>
+          </div>
+
+
+          <h1>
+            Sharp Cuts.
+            <br>
+            <span class="red-word">
+              Sharp Confidence.
+            </span>
+          </h1>
+
+
+          <p class="hero-description">
+            Premium grooming for the modern man.
+            Classic barbering heritage meets modern
+            precision, clean fades and sharp finishing.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              class="btn btn-red"
+              href="#booking"
+            >
+              Reserve Your Spot
+              <span>→</span>
+            </a>
+
+            <a
+              class="btn btn-dark"
+              href="#services"
+            >
+              View Barber Menu
+            </a>
+
+          </div>
+
+
+          <div class="open-badge">
+
+            <span class="open-dot"></span>
+
+            Open Daily:
+            07:00 AM – 9:00 PM
+            (After 12:30 PM Closed on Friday)
+
+          </div>
+
+
+          <div class="hero-barber-mark">
+            CLASSIC BARBERING • MODERN PRECISION
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Barber Menu
+          </div>
+
+          <h2>
+            Precision grooming.
+            <span class="accent">
+              Sharp prices.
+            </span>
+          </h2>
+
+          <p>
+            From classic cuts and skin fades to beard
+            shaping and premium grooming rituals,
+            every service is finished with barber-level
+            precision.
+          </p>
+
+        </div>
+
+
+        <div class="price-card">
+
+          <div class="menu-header">
+
+            <div class="menu-header-title">
+              <span>✂</span>
+              MUJAHID Hair salon MENU
+            </div>
+
+            <div class="menu-header-badge">
+              PREMIUM GROOMING
+            </div>
+
+          </div>
+
+
+          <ul class="price-list">
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  01
+                </span>
+
+                <span class="service-name">
+                  Head Massage & Body Massage
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹1400
+              </span>
+
+              <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  02
+                </span>
+
+                <span class="service-name">
+                  O3 Professional Facial
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹950
+              </span>
+
+            </li>
+
+            </li>
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  03
+                </span>
+
+                <span class="service-name">
+                  Classic Haircut
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹250
+              </span>
+
+            </li>
+
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  04
+                </span>
+
+                <span class="service-name">
+                  Zero Fade / Skin Fade
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹170
+              </span>
+
+            </li>
+
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  05
+                </span>
+
+                <span class="service-name">
+                  Premium Beard Trim & Shape
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹120
+              </span>
+
+            </li>
+
+
+            
+
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  06
+                </span>
+
+                <span class="service-name">
+                  Hair Color & Styling Highlights
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹400
+              </span>
+
+            </li>
+
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  07
+                </span>
+
+                <span class="service-name">
+                  hair rebonding
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹750
+              </span>
+
+            </li>
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  08
+                </span>
+
+                <span class="service-name">
+                  D-10 (face & neck)
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹750
+              </span>
+
+            </li>
+            </li>
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  09
+                </span>
+
+                <span class="service-name">
+                 Hair wash 
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹200
+              </span>
+
+            </li>
+                        </li>
+
+            <li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  10
+                </span>
+
+                <span class="service-name">
+                  Threading
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹50
+              </span>
+
+            </li>
+<li class="price-row">
+
+              <div class="service-info">
+
+                <span class="service-index">
+                  11
+                </span>
+
+                <span class="service-name">
+                  Hair Spa
+                </span>
+
+              </div>
+
+              <span class="service-price">
+                ₹500
+              </span>
+
+            </li>
+        
+          </ul>
+
+
+          <div class="price-footer">
+
+            <p>
+              Customized services may vary in price.
+            </p>
+
+            <a
+              class="btn btn-red"
+              href="#booking"
+            >
+              Book Now
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOOKING WIZARD
+         ===================================================== -->
+
+    <section id="booking">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Appointment
+          </div>
+
+          <h2>
+            Your next cut is
+            <span class="accent">
+              three steps away.
+            </span>
+          </h2>
+
+          <p>
+            Tell us who you are, choose your grooming
+            service, select a convenient slot and confirm
+            directly through WhatsApp.
+          </p>
+
+        </div>
+
+
+        <div class="booking-shell">
+
+          <div class="booking-header">
+
+            <h2>
+              Reserve Your Spot
+            </h2>
+
+            <p id="stepDescription">
+              Enter your profile details.
+            </p>
+
+
+            <div class="progress">
+
+              <span
+                class="progress-bar active"
+                data-progress="1"
+              ></span>
+
+              <span
+                class="progress-bar"
+                data-progress="2"
+              ></span>
+
+              <span
+                class="progress-bar"
+                data-progress="3"
+              ></span>
+
+            </div>
+
+          </div>
+
+
+          <div class="booking-body">
+
+
+            <!-- STEP 1 -->
+
+            <div
+              class="wizard-step active"
+              data-step="1"
+            >
+
+              <div class="step-title">
+
+                <h3>
+                  Your Details
+                </h3>
+
+                <p>
+                  Tell us who the appointment is for.
+                </p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="clientName">
+                  Full Name *
+                </label>
+
+                <input
+                  id="clientName"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Enter your full name"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="notes">
+                  Custom Notes
+                  <span style="color:#555;">
+                    (optional)
+                  </span>
+                </label>
+
+                <textarea
+                  id="notes"
+                  placeholder="Example: Keep the sides short, prefer a natural finish..."
+                ></textarea>
+
+              </div>
+
+
+              <div class="wizard-actions">
+
+                <span></span>
+
+                <button
+                  class="btn btn-red"
+                  type="button"
+                  data-next
+                >
+                  Continue →
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div
+              class="wizard-step"
+              data-step="2"
+            >
+
+              <div class="step-title">
+
+                <h3>
+                  Choose Your Service
+                </h3>
+
+                <p>
+                  Select your preferred grooming service.
+                </p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="service">
+                  Grooming Service *
+                </label>
+
+                <select id="service">
+
+                  <option value="">
+                    Select a service
+                  </option>
+
+                  <option>
+                    Head massage & body massage — ₹1400                  </option>
+
+                  <option>
+                    O3 Professional Facial — ₹950
+                  </option>
+
+                  <option>
+                    
+Classic Haircut — ₹250
+
+                  </option>
+
+                  <option>
+                    Zero Fade / Skin Fade — ₹170
+                  </option>
+
+                   <option>
+                    Premium Beard Trim & Shape — ₹120
+                  </option>
+
+                  <option>
+                    Hair Color & Styling Highlights — ₹400
+                  </option>
+
+                  <option>
+                    Hair rebonding — ₹750
+                  </option>
+                   <option>
+                    D-10 (face & neck) — ₹750
+                  </option>
+                   <option>
+                    Hair wash — ₹200
+                  </option>
+                   <option>
+                    Threading — ₹50
+                  </option>
+                  <option>
+                    Hair Spa — ₹500
+                  </option>
+                  
+
+                </select>
+
+              </div>
+
+
+              <div class="wizard-actions">
+
+                <button
+                  class="btn btn-dark"
+                  type="button"
+                  data-prev
+                >
+                  ← Back
+                </button>
+
+                <button
+                  class="btn btn-red"
+                  type="button"
+                  data-next
+                >
+                  Choose Slot →
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div
+              class="wizard-step"
+              data-step="3"
+            >
+
+              <div class="step-title">
+
+                <h3>
+                  Select Date & Time
+                </h3>
+
+                <p>
+                  Choose your convenient appointment slot.
+                </p>
+
+              </div>
+
+
+              <div
+                class="date-grid"
+                id="dateGrid"
+              ></div>
+
+
+              <div class="time-heading">
+                Available Time Slots
+              </div>
+
+
+              <div class="time-grid">
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="08:00 AM"
+                >
+                  08:00 AM
+                </button>
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="11:30 AM"
+                >
+                  11:30 AM
+                </button>
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="1:00 PM"
+                >
+                  1:00 PM
+                </button>
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="2:30 PM"
+                >
+                  2:30 PM
+                </button>
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="4:00 PM"
+                >
+                  4:00 PM
+                </button>
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="5:30 PM"
+                >
+                  5:30 PM
+                </button>
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="7:00 PM"
+                >
+                  7:00 PM
+                </button>
+
+                <button
+                  class="time-option"
+                  type="button"
+                  data-time="8:00 PM"
+                >
+                  8:00 PM
+                </button>
+
+              </div>
+
+
+              <p class="selection-note">
+                Friday are closed before 12:30 PM. Appointment availability
+                is subject to salon capacity.
+              </p>
+
+
+              <div class="wizard-actions">
+
+                <button
+                  class="btn btn-dark"
+                  type="button"
+                  data-prev
+                >
+                  ← Back
+                </button>
+
+                <button
+                  class="btn btn-red"
+                  type="button"
+                  id="confirmButton"
+                >
+                  Confirm via WhatsApp ↗
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VIP BARBER CLUB
+         ===================================================== -->
+
+    <section id="loyalty">
+
+      <div class="container">
+
+        <div class="loyalty-card">
+
+          <div class="loyalty-content">
+
+            <div class="eyebrow">
+              VIP Barber Club
+            </div>
+
+
+            <h2>
+              Loyal Customers
+              <span class="accent">
+                Get Rewarded.
+              </span>
+            </h2>
+
+
+            <p>
+              We value your presence. Ask for your VIP
+              loyalty card on your next visit and unlock
+              exclusive grooming rewards.
+            </p>
+
+
+            <ul class="reward-list">
+
+              <li class="reward-item">
+
+                <span class="reward-number">
+                  03
+                </span>
+
+                <span class="reward-text">
+                  <strong>3rd Visit</strong>
+                  → 20% OFF on Hair Facials
+                </span>
+
+              </li>
+
+
+              <li class="reward-item">
+
+                <span class="reward-number">
+                  06
+                </span>
+
+                <span class="reward-text">
+                  <strong>6th Visit</strong>
+                  → 50% OFF on Hair Color Choices
+                </span>
+
+              </li>
+
+
+              <li class="reward-item">
+
+                <span class="reward-number">
+                  10
+                </span>
+
+                <span class="reward-text">
+                  <strong>10th Visit</strong>
+                  → ABSOLUTELY FREE HAIRCUT
+                </span>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SALON / LOCATION
+         ===================================================== -->
+
+    <section id="location">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            The Barber Studio
+          </div>
+
+          <h2>
+            Step inside the
+            <span class="accent">
+              barber chair.
+            </span>
+          </h2>
+
+          <p>
+            A focused grooming environment built around
+            comfort, precision and authentic classic
+            barber-shop character.
+          </p>
+
+        </div>
+
+
+        <div class="ambiance-grid">
+
+          <div class="ambiance-card">
+
+            <div class="ambiance-content">
+
+              <span>
+                01 / Exterior
+              </span>
+
+              <h3>
+                Main Street View
+              </h3>
+
+              <p>
+                FIND US • WALK IN • GET SHARP
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="ambiance-card">
+
+            <div class="ambiance-content">
+
+              <span>
+                02 / Interior
+              </span>
+
+              <h3>
+                Interior Setup
+              </h3>
+
+              <p>
+                CLASSIC CHAIRS • CLEAN FINISHES
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="map-card">
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14003.860872868285!2d80.06733745336535!3d28.660760094227747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a035006b488be1%3A0x5f606beaaacf6294!2sMujahid%20hair%20saloon!5e0!3m2!1sen!2sin!4v1790333389397!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+          <!-- HOURS -->
+
+          <div class="info-card">
+
+            <h3>
+              Opening Hours
+            </h3>
+
+            <ul class="hours">
+
+              <li>
+                <span>Monday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Tuesday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Wednesday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Thursday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Friday</span>
+                <strong>08:00 AM – 12:30 PM</strong>
+              </li>
+
+              <li>
+                <span>Saturday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Sunday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- CONTACT -->
+
+          <div
+            class="info-card"
+            id="contact"
+          >
+
+            <h3>
+              Contact The Salon
+            </h3>
+
+
+            <a
+              class="contact-link"
+              href="tel:+919759244556"
+            >
+
+              <span class="contact-icon">
+                ☎
+              </span>
+
+              <span>
+                +91 9759244556
+              </span>
+
+            </a>
+
+            <a
+              class="contact-link"
+              href="tel:+916395175113"
+            >
+
+              <span class="contact-icon">
+                ☎
+              </span>
+
+              <span>
+                +91 6395175113
+              </span>
+
+            </a>
+
+
+            <a
+              class="contact-link"
+              href="https://wa.me/919759244556"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span class="contact-icon">
+                WA
+              </span>
+
+              <span>
+                WhatsApp Appointment
+              </span>
+
+            </a>
+
+
+            <a
+              class="contact-link"
+              href="#booking"
+            >
+
+              <span class="contact-icon">
+                ✂
+              </span>
+
+              <span>
+                Reserve Your Next Visit
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          MUJAHID HAIR SALON
+        </div>
+
+        <div class="footer-copy">
+          Premium barbering for the modern gentleman.
+          © <span id="year"></span> Mujahid Hair Salon.
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- TOAST -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    "use strict";
+
+
+    /* =========================================================
+       SALON CONFIGURATION
+       ========================================================= */
+
+    const SALON = {
+      whatsappNumber: "919759244556"
+    };
+
+
+    /* =========================================================
+       DOM REFERENCES
+       ========================================================= */
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    const clientName =
+      document.getElementById("clientName");
+
+    const notes =
+      document.getElementById("notes");
+
+    const service =
+      document.getElementById("service");
+
+    const dateGrid =
+      document.getElementById("dateGrid");
+
+    const confirmButton =
+      document.getElementById("confirmButton");
+
+    const toast =
+      document.getElementById("toast");
+
+    const progressBars =
+      document.querySelectorAll(
+        ".progress-bar"
+      );
+
+    const wizardSteps =
+      document.querySelectorAll(
+        ".wizard-step"
+      );
+
+    const stepDescription =
+      document.getElementById(
+        "stepDescription"
+      );
+
+
+    /* =========================================================
+       BOOKING STATE
+       ========================================================= */
+
+    let currentStep = 1;
+
+    const booking = {
+      name: "",
+      notes: "",
+      service: "",
+      date: "",
+      time: ""
+    };
+
+
+    /* =========================================================
+       MOBILE NAVIGATION
+       ========================================================= */
+
+    menuButton.addEventListener(
+      "click",
+      () => {
+
+        const opened =
+          mobileMenu.classList.toggle(
+            "open"
+          );
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          String(opened)
+        );
+
+      }
+    );
+
+
+    document
+      .querySelectorAll(".mobile-menu a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            mobileMenu.classList.remove(
+              "open"
+            );
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       TOAST
+       ========================================================= */
+
+    let toastTimer;
+
+    function showToast(
+      message,
+      type = "success"
+    ) {
+
+      toast.textContent = message;
+
+      toast.className =
+        `toast show ${type}`;
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(
+        () => {
+          toast.className = "toast";
+        },
+        3200
+      );
+    }
+
+
+    /* =========================================================
+       DATE GENERATOR
+       Tuesdays are skipped
+       ========================================================= */
+
+    function generateDates() {
+
+      dateGrid.innerHTML = "";
+
+      const today =
+        new Date();
+
+      let created = 0;
+      let offset = 1;
+
+      while (created < 6) {
+
+        const date =
+          new Date(today);
+
+        date.setDate(
+          today.getDate() + offset
+        );
+
+        offset++;
+
+        const weekday =
+          date.getDay();
+
+        /* Tuesday = 2 */
+
+        if (weekday === 2) {
+          continue;
+        }
+
+        const dayName =
+          date.toLocaleDateString(
+            "en-IN",
+            {
+              weekday: "short"
+            }
+          );
+
+        const dayNumber =
+          date.getDate();
+
+        const month =
+          date.toLocaleDateString(
+            "en-IN",
+            {
+              month: "short"
+            }
+          );
+
+        const readableDate =
+          `${dayName}, ${dayNumber} ${month}`;
+
+
+        const button =
+          document.createElement(
+            "button"
+          );
+
+        button.type = "button";
+
+        button.className =
+          "date-option";
+
+        button.dataset.date =
+          readableDate;
+
+        button.innerHTML = `
+          <span class="date-day">
+            ${dayName}
+          </span>
+
+          <span class="date-number">
+            ${dayNumber}
+          </span>
+        `;
+
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            document
+              .querySelectorAll(
+                ".date-option"
+              )
+              .forEach(
+                option => {
+
+                  option.classList.remove(
+                    "selected"
+                  );
+
+                }
+              );
+
+            button.classList.add(
+              "selected"
+            );
+
+            booking.date =
+              button.dataset.date;
+
+          }
+        );
+
+
+        dateGrid.appendChild(
+          button
+        );
+
+        created++;
+      }
+    }
+
+
+    generateDates();
+
+
+    /* =========================================================
+       TIME SELECTION
+       ========================================================= */
+
+    document
+      .querySelectorAll(
+        ".time-option"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            document
+              .querySelectorAll(
+                ".time-option"
+              )
+              .forEach(
+                option => {
+
+                  option.classList.remove(
+                    "selected"
+                  );
+
+                }
+              );
+
+            button.classList.add(
+              "selected"
+            );
+
+            booking.time =
+              button.dataset.time;
+
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       STEP DESCRIPTIONS
+       ========================================================= */
+
+    const descriptions = {
+
+      1:
+        "Enter your profile details.",
+
+      2:
+        "Choose your preferred grooming service.",
+
+      3:
+        "Select an available date and time."
+
+    };
+
+
+    /* =========================================================
+       STEP VALIDATION
+       ========================================================= */
+
+    function validateStep(step) {
+
+      if (step === 1) {
+
+        const name =
+          clientName.value.trim();
+
+        if (!name) {
+
+          alert(
+            "Please enter your full name."
+          );
+
+          clientName.focus();
+
+          return false;
+        }
+
+        booking.name = name;
+
+        booking.notes =
+          notes.value.trim();
+      }
+
+
+      if (step === 2) {
+
+        if (!service.value) {
+
+          alert(
+            "Please select a grooming service."
+          );
+
+          service.focus();
+
+          return false;
+        }
+
+        booking.service =
+          service.value;
+      }
+
+
+      if (step === 3) {
+
+        if (!booking.date) {
+
+          alert(
+            "Please select a booking date."
+          );
+
+          return false;
+        }
+
+
+        if (!booking.time) {
+
+          alert(
+            "Please select a booking time."
+          );
+
+          return false;
+        }
+
+      }
+
+      return true;
+    }
+
+
+    /* =========================================================
+       DISPLAY STEP
+       ========================================================= */
+
+    function showStep(step) {
+
+      currentStep = step;
+
+
+      wizardSteps.forEach(
+        wizardStep => {
+
+          const number =
+            Number(
+              wizardStep.dataset.step
+            );
+
+          wizardStep.classList.toggle(
+            "active",
+            number === step
+          );
+
+        }
+      );
+
+
+      progressBars.forEach(
+        (bar, index) => {
+
+          bar.classList.toggle(
+            "active",
+            index < step
+          );
+
+        }
+      );
+
+
+      stepDescription.textContent =
+        descriptions[step];
+
+    }
+
+
+    /* =========================================================
+       NEXT BUTTON
+       ========================================================= */
+
+    document
+      .querySelectorAll(
+        "[data-next]"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            if (
+              !validateStep(
+                currentStep
+              )
+            ) {
+              return;
+            }
+
+            showStep(
+              Math.min(
+                currentStep + 1,
+                3
+              )
+            );
+
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       PREVIOUS BUTTON
+       ========================================================= */
+
+    document
+      .querySelectorAll(
+        "[data-prev]"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            showStep(
+              Math.max(
+                currentStep - 1,
+                1
+              )
+            );
+
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       WHATSAPP MESSAGE
+       ========================================================= */
+
+    function createWhatsAppMessage() {
+
+      const message = [
+  "✨ *MUJAHID HAIR SALOON* ✨",
+  "",
+  "Hello Mujahid Hair Saloon! 👋",
+  "I would like to book an appointment for your salon services.",
+  "",
+  "📋 *APPOINTMENT REQUEST*",
+  "━━━━━━━━━━━━━━━━━━",
+  `👤 *Client Name:* ${booking.name}`,
+  `💇 *Requested Service:* ${booking.service}`,
+  `📅 *Preferred Date:* ${booking.date}`,
+  `🕐 *Preferred Time:* ${booking.time}`,
+  "━━━━━━━━━━━━━━━━━━",
+  "",
+  "I kindly request you to confirm the availability of this time slot. If the requested slot is unavailable, please let me know about the nearest available time.",
+  "",
+  "Please confirm my appointment once it has been successfully scheduled. I look forward to visiting *Mujahid Hair Saloon* and enjoying your professional service. ✂️✨",
+  "",
+  "Thank you! 🙏",
+  "— *Appointment Request via Mujahid Hair Saloon*"
+];
+
+
+      if (booking.notes) {
+
+        message.push(
+          `Notes: ${booking.notes}`
+        );
+
+      }
+
+
+      return message.join("\n");
+    }
+
+
+    /* =========================================================
+       FINAL WHATSAPP CONFIRMATION
+       ========================================================= */
+
+    confirmButton.addEventListener(
+      "click",
+      () => {
+
+        if (!booking.name) {
+
+          alert(
+            "Please enter your name."
+          );
+
+          showStep(1);
+
+          return;
+        }
+
+
+        if (!booking.service) {
+
+          alert(
+            "Please select a service."
+          );
+
+          showStep(2);
+
+          return;
+        }
+
+
+        if (!booking.date) {
+
+          alert(
+            "Please select a booking date."
+          );
+
+          return;
+        }
+
+
+        if (!booking.time) {
+
+          alert(
+            "Please select a booking time."
+          );
+
+          return;
+        }
+
+
+        const message =
+          createWhatsAppMessage();
+
+
+        const encodedMessage =
+          encodeURIComponent(
+            message
+          );
+
+
+        /* Correct WhatsApp URL */
+
+        const whatsappURL =
+          `https://wa.me/${SALON.whatsappNumber}?text=${encodedMessage}`;
+
+
+        showToast(
+          "Opening WhatsApp booking...",
+          "success"
+        );
+
+
+        setTimeout(
+          () => {
+
+            window.open(
+              whatsappURL,
+              "_blank",
+              "noopener,noreferrer"
+            );
+
+          },
+          250
+        );
+
+      }
+    );
+
+
+    /* =========================================================
+       CURRENT YEAR
+       ========================================================= */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /* =========================================================
+       INITIALIZE
+       ========================================================= */
+
+    showStep(1);
+
+  </script>
+
+</body>
+</html>
