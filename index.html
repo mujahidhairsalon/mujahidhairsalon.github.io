@@ -776,6 +776,7 @@
       margin: 0 0 28px;
 
       max-width: 950px;
+      
 
       font-family:
         "Barlow Condensed",
@@ -789,7 +790,7 @@
 
       line-height: 0.83;
 
-      letter-spacing: -0.035em;
+      letter-spacing: 0.001em;
 
       font-weight: 900;
 
@@ -800,7 +801,7 @@
       display: inline-block;
 
       color: var(--red-bright);
-
+      letter-spacing: 0.001em;
       text-shadow:
         0 0 35px rgba(215,25,32,0.18);
     }
@@ -1764,28 +1765,6 @@
 
   z-index: 1;
 }
-
-
-/* STREET / EXTERIOR */
-.ambiance-card:first-child {
-  background:
-    url("street.png")
-    center center
-    / cover
-    no-repeat;
-}
-
-
-/* INTERIOR */
-.ambiance-card:nth-child(2) {
-  background:
-    url("interior.png")
-    center center
-    / cover
-    no-repeat;
-}
-
-
 .ambiance-content {
   position: relative;
 
@@ -1831,26 +1810,100 @@
   font-size: 0.68rem;
 }
 
+
+/* =========================================================
+   SALON IMAGE GALLERY
+   ========================================================= */
+.salon-gallery { 
+  position: relative; 
+  width: 100%;
+  min-height: 220px; 
+  overflow: hidden; 
+  border: 1px solid var(--border); 
+  border-radius: 5px; 
+  background: #0c0c0c; 
+}
+
+.salon-gallery-track { 
+  display: flex; 
+  width: 100%; 
+  height: 100%; 
+  min-height: 220px; 
+  transition: transform 320ms ease; 
+  touch-action: pan-y; 
+}
+
+.salon-gallery-track img { 
+  width: 100%; 
+  min-width: 100%; 
+  height: 220px; 
+  object-fit: cover; 
+  flex: 0 0 100%; 
+}
+
+.salon-gallery-btn { 
+  position: absolute; 
+  top: 50%; 
+  z-index: 3; 
+  width: 44px; 
+  height: 44px; 
+  display: grid; 
+  place-items: center; 
+  transform: translateY(-50%); 
+  border: 1px solid rgba(255,255,255,0.18); 
+  border-radius: 50%; 
+  color: #fff; 
+  background: rgba(0,0,0,0.58); 
+  font-size: 2rem; 
+  line-height: 1; 
+  backdrop-filter: blur(6px); 
+  -webkit-backdrop-filter: blur(6px); 
+}
+
+.salon-gallery-prev { left: 12px; }
+.salon-gallery-next { right: 12px; }
+.salon-gallery-btn:hover { background: var(--red); border-color: var(--red); }
+
+.salon-gallery-dots { 
+  position: absolute; 
+  left: 50%; 
+  bottom: 12px; 
+  z-index: 3; 
+  display: flex; 
+  justify-content: center; 
+  gap: 5px; 
+  max-width: calc(100% - 24px); 
+  transform: translateX(-50%); 
+}
+
+.salon-gallery-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,0.48); }
+.salon-gallery-dots button.active { width: 18px; border-radius: 10px; background: var(--red); }
+
+/* Mobile Screens (Kam Height: 220px) */
+@media (max-width: 759px) { 
+  .salon-gallery { min-height: 220px; } 
+  .salon-gallery-track { min-height: 220px; } 
+  .salon-gallery-track img { height: 220px; } 
+  .salon-gallery-btn { width: 40px; height: 40px; } 
+}
 .map-card {
   min-height: 250px;
-
   overflow: hidden;
-
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 5px;
-
   background: #ffffff;
+  
+  /* Sides se gap dene ke liye */
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .map-card iframe {
   width: 100%;
   height: 250px;
-
   min-height: 250px;
-
   border: 0;
+  display: block; /* Gap aur alignment fix karne ke liye */
 
   filter:
     grayscale(1)
@@ -2163,9 +2216,56 @@
           repeat(4, 1fr);
       }
 
+      /* Full-width desktop sections/cards */
+      .price-card {
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+      }
+
       .ambiance-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
+        display: block;
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+      }
+
+      /* Desktop gallery + map: same width, same height, inside container */
+      .salon-gallery {
+        width: 100%;
+        height: 520px;
+        min-height: 520px;
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .salon-gallery-track {
+        width: 100%;
+        height: 520px;
+        min-height: 520px;
+      }
+
+      .salon-gallery-track img {
+        width: 100%;
+        height: 520px;
+        min-width: 100%;
+        object-fit: cover;
+      }
+
+      .map-card {
+        width: 100%;
+        height: 520px;
+        min-height: 520px;
+        margin: 0;
+        border-radius: 8px;
+      }
+
+      .map-card iframe {
+        width: 100%;
+        height: 520px;
+        min-height: 520px;
       }
 
       .ambiance-card:first-child {
@@ -2471,13 +2571,13 @@
         <div class="section-heading">
 
           <div class="eyebrow">
-            Barber Menu
+            Barber Services
           </div>
 
           <h2>
             Precision grooming.
             <span class="accent">
-              Sharp prices.
+              Premium Services.
             </span>
           </h2>
 
@@ -2497,7 +2597,7 @@
 
             <div class="menu-header-title">
               <span>✂</span>
-              MUJAHID Hair salon MENU
+              MUJAHID Hair salon Services
             </div>
 
             <div class="menu-header-badge">
@@ -2523,9 +2623,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹1400
-              </span>
+              
 
               <li class="price-row">
 
@@ -2541,9 +2639,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹950
-              </span>
+              
 
             </li>
 
@@ -2563,9 +2659,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹250
-              </span>
+              
 
             </li>
 
@@ -2584,9 +2678,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹170
-              </span>
+            
 
             </li>
 
@@ -2605,9 +2697,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹120
-              </span>
+             
 
             </li>
 
@@ -2629,9 +2719,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹400
-              </span>
+              
 
             </li>
 
@@ -2650,9 +2738,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹750
-              </span>
+              
 
             </li>
 
@@ -2670,9 +2756,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹750
-              </span>
+              
 
             </li>
             </li>
@@ -2691,9 +2775,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹200
-              </span>
+              
 
             </li>
                         </li>
@@ -2712,9 +2794,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹50
-              </span>
+              
 
             </li>
 <li class="price-row">
@@ -2731,9 +2811,7 @@
 
               </div>
 
-              <span class="service-price">
-                ₹500
-              </span>
+              
 
             </li>
         
@@ -2933,44 +3011,44 @@
                   </option>
 
                   <option>
-                    Head massage & body massage — ₹1400                  </option>
-
+                    Head massage & body massage                 
+                  </option>
                   <option>
-                    O3 Professional Facial — ₹950
+                    O3 Professional Facial 
                   </option>
 
                   <option>
                     
-Classic Haircut — ₹250
+                    Classic Haircut 
 
                   </option>
 
                   <option>
-                    Zero Fade / Skin Fade — ₹170
+                    Zero Fade / Skin Fade 
                   </option>
 
                    <option>
-                    Premium Beard Trim & Shape — ₹120
+                    Premium Beard Trim & Shape 
                   </option>
 
                   <option>
-                    Hair Color & Styling Highlights — ₹400
+                    Hair Color & Styling Highlights 
                   </option>
 
                   <option>
-                    Hair rebonding — ₹750
+                    Hair rebonding 
                   </option>
                    <option>
-                    D-10 (face & neck) — ₹750
+                    D-10 (face & neck)
                   </option>
                    <option>
-                    Hair wash — ₹200
+                    Hair wash 
                   </option>
                    <option>
-                    Threading — ₹50
+                    Threading 
                   </option>
                   <option>
-                    Hair Spa — ₹500
+                    Hair Spa 
                   </option>
                   
 
@@ -3139,7 +3217,123 @@ Classic Haircut — ₹250
     </section>
 
 
+    
+
     <!-- =====================================================
+         SALON / LOCATION
+         ===================================================== -->
+
+    <section id="location">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            The Barber Studio
+          </div>
+
+          <h2>
+            Step inside the
+            <span class="accent">
+              barber chair.
+            </span>
+          </h2>
+
+          <p>
+            A focused grooming environment built around
+            comfort, precision and authentic classic
+            barber-shop character.
+          </p>
+
+        </div>
+        <div class="ambiance-grid">
+
+          <div class="salon-gallery" aria-label="Mujahid Hair Salon gallery">
+            <div class="salon-gallery-track">
+              <img src="Img1.jpg" alt="Mujahid Hair Salon image 1">
+              <img src="Img2.jpg" alt="Mujahid Hair Salon image 2">
+              <img src="Img3.jpg" alt="Mujahid Hair Salon image 3">
+              <img src="Img4.jpg" alt="Mujahid Hair Salon image 4">
+              <img src="Img5.jpg" alt="Mujahid Hair Salon image 5">
+              <img src="Img6.jpg" alt="Mujahid Hair Salon image 6">
+              <img src="Img7.jpg" alt="Mujahid Hair Salon image 7">
+            </div>
+            <button class="salon-gallery-btn salon-gallery-prev" type="button" aria-label="Previous image">‹</button>
+            <button class="salon-gallery-btn salon-gallery-next" type="button" aria-label="Next image">›</button>
+            <div class="salon-gallery-dots" aria-label="Gallery navigation">
+              <button type="button" class="active" data-slide="0" aria-label="Image 1"></button>
+              <button type="button" data-slide="1" aria-label="Image 2"></button>
+              <button type="button" data-slide="2" aria-label="Image 3"></button>
+              <button type="button" data-slide="3" aria-label="Image 4"></button>
+              <button type="button" data-slide="4" aria-label="Image 5"></button>
+              <button type="button" data-slide="5" aria-label="Image 6"></button>
+              <button type="button" data-slide="6" aria-label="Image 7"></button>
+            </div>
+          </div>
+
+          
+
+        </div>
+
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+          <!-- HOURS -->
+
+          <div class="info-card">
+
+            <h3>
+              Opening Hours
+            </h3>
+
+            <ul class="hours">
+
+              <li>
+                <span>Monday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Tuesday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Wednesday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Thursday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Friday</span>
+                <strong>08:00 AM – 12:30 PM</strong>
+              </li>
+
+              <li>
+                <span>Saturday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+              <li>
+                <span>Sunday</span>
+                <strong>08:00 AM – 9:00 PM</strong>
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- =====================================================
          VIP BARBER CLUB
          ===================================================== -->
 
@@ -3222,82 +3416,13 @@ Classic Haircut — ₹250
 
       </div>
 
-    </section>
+   <h2 style="text-align: center; margin: 0; margin-top: 40px ; padding: 0; color: #ffffff; font-weight: 800; font-size: 1.5rem; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.2;">
+  SHOP LOCATION 📍
+</h2>
+    
 
-
-    <!-- =====================================================
-         SALON / LOCATION
-         ===================================================== -->
-
-    <section id="location">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="eyebrow">
-            The Barber Studio
-          </div>
-
-          <h2>
-            Step inside the
-            <span class="accent">
-              barber chair.
-            </span>
-          </h2>
-
-          <p>
-            A focused grooming environment built around
-            comfort, precision and authentic classic
-            barber-shop character.
-          </p>
-
-        </div>
-
-
-        <div class="ambiance-grid">
-
-          <div class="ambiance-card">
-
-            <div class="ambiance-content">
-
-              <span>
-                01 / Exterior
-              </span>
-
-              <h3>
-                Main Street View
-              </h3>
-
-              <p>
-                FIND US • WALK IN • GET SHARP
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="ambiance-card">
-
-            <div class="ambiance-content">
-
-              <span>
-                02 / Interior
-              </span>
-
-              <h3>
-                Interior Setup
-              </h3>
-
-              <p>
-                CLASSIC CHAIRS • CLEAN FINISHES
-              </p>
-
-            </div>
-
-          </div>
-
+    </div>
+    
 
           <div class="map-card">
 
@@ -3312,63 +3437,9 @@ Classic Haircut — ₹250
 
           </div>
 
-        </div>
 
 
-        <div class="contact-grid">
-
-
-          <!-- HOURS -->
-
-          <div class="info-card">
-
-            <h3>
-              Opening Hours
-            </h3>
-
-            <ul class="hours">
-
-              <li>
-                <span>Monday</span>
-                <strong>08:00 AM – 9:00 PM</strong>
-              </li>
-
-              <li>
-                <span>Tuesday</span>
-                <strong>08:00 AM – 9:00 PM</strong>
-              </li>
-
-              <li>
-                <span>Wednesday</span>
-                <strong>08:00 AM – 9:00 PM</strong>
-              </li>
-
-              <li>
-                <span>Thursday</span>
-                <strong>08:00 AM – 9:00 PM</strong>
-              </li>
-
-              <li>
-                <span>Friday</span>
-                <strong>08:00 AM – 12:30 PM</strong>
-              </li>
-
-              <li>
-                <span>Saturday</span>
-                <strong>08:00 AM – 9:00 PM</strong>
-              </li>
-
-              <li>
-                <span>Sunday</span>
-                <strong>08:00 AM – 9:00 PM</strong>
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <!-- CONTACT -->
+          <!-- CONTACT  the salon -->
 
           <div
             class="info-card"
@@ -3444,8 +3515,6 @@ Classic Haircut — ₹250
 
             </a>
 
-          </div>
-
         </div>
 
       </div>
@@ -3471,7 +3540,7 @@ Classic Haircut — ₹250
 
         <div class="footer-copy">
           Premium barbering for the modern gentleman.
-          © <span id="year"></span> Mujahid Hair Salon.
+          © <span id="year"></span> Mujahid Hair Salon.<br> Created by <b> Mushahid Raza (Razacdex). </b>
         </div>
 
       </div>
@@ -4152,6 +4221,42 @@ Classic Haircut — ₹250
     showStep(1);
 
   </script>
+
+
+<script>
+(function(){
+  const g = document.querySelector(".salon-gallery");
+  if(!g) return;
+  
+  const t = g.querySelector(".salon-gallery-track");
+  const slides = t.querySelectorAll("img"); // Actual images count karega
+  const total = slides.length; // Ab ye dynamically 7 count karega
+  const d = [...g.querySelectorAll(".salon-gallery-dots button")];
+  const p = g.querySelector(".salon-gallery-prev");
+  const n = g.querySelector(".salon-gallery-next");
+  
+  let i = 0, x = 0, dx = 0;
+  
+  function show(v){
+    i = (v + total) % total; // Hardcoded 10 ki jagah dynamic total ka use
+    t.style.transform = "translateX(-" + (i * 100) + "%)";
+    d.forEach((b, j) => b.classList.toggle("active", j === i));
+  }
+  
+  p.onclick = () => show(i - 1);
+  n.onclick = () => show(i + 1);
+  d.forEach(b => b.onclick = () => show(+b.dataset.slide));
+  
+  t.addEventListener("touchstart", e => { x = e.touches[0].clientX; }, {passive: true});
+  t.addEventListener("touchmove", e => { dx = e.touches[0].clientX - x; }, {passive: true});
+  t.addEventListener("touchend", () => {
+    if(Math.abs(dx) > 45) show(i + (dx < 0 ? 1 : -1));
+    x = dx = 0;
+  }, {passive: true});
+  
+  show(0);
+})();
+</script>
 
 </body>
 </html>
